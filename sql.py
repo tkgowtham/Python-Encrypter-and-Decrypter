@@ -78,18 +78,6 @@ def decryptor():
         print("Wrong Password")
         main_2()
     
-    '''print("Password Max 3 Chance Or Else Keys will be DELETED FOREVER")
-
-    pt = 3
-    while pt > 0:
-        passwod = str(input("Enter Password: "))
-        try:
-            curs.execute(f'select * from {passwod}')
-        except:
-            pt -= 1
-            print('Wrong Password')
-            print(f'No.Of.Attempts Left = {pt}')'''
-        
 
     lum = num.split('_')
     act = []
