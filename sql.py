@@ -78,6 +78,18 @@ def decryptor():
         print("Wrong Password")
         main_2()
     
+    '''print("Password Max 3 Chance Or Else Keys will be DELETED FOREVER")
+
+    pt = 3
+    while pt > 0:
+        passwod = str(input("Enter Password: "))
+        try:
+            curs.execute(f'select * from {passwod}')
+        except:
+            pt -= 1
+            print('Wrong Password')
+            print(f'No.Of.Attempts Left = {pt}')'''
+        
 
     lum = num.split('_')
     act = []
@@ -119,7 +131,7 @@ def main_2():
 
 def main():
     global username
-    dd = int(input("Are you (1) Existing User or (2) New User or (3) Delete Account: "))
+    dd = int(input("Are you (1) Existing User or (2) New User: "))
     if dd == 1:
         try:
             username = input("Enter Username: ")
@@ -136,21 +148,5 @@ def main():
         except:
             print("Username already taken! please enter different username.")
             main()
-    elif dd == 3:
-        username = str(input("Enter Username: "))
-        kijo = str(input("Are You Sure You want to delete your account(y/n): "))
-        if kijo == 'y':
-            try:
-                curs.execute(f'drop database {username}')
-                print(f"{username} is deleted successfully.")
-                main()
-            except:
-                print("Username Invaild!!!")
-                main()
-        else:
-            pass
-        print("Username Not Found!!!")
-        main()
-            
             
 main()
